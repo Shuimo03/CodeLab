@@ -1,0 +1,27 @@
+# permissions for end users to view crwls.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: crwl-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: operator
+    app.kubernetes.io/part-of: operator
+    app.kubernetes.io/managed-by: kustomize
+  name: crwl-viewer-role
+rules:
+- apiGroups:
+  - workload.app.workload
+  resources:
+  - crwls
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - workload.app.workload
+  resources:
+  - crwls/status
+  verbs:
+  - get

@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- workload_v1_crwl.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
